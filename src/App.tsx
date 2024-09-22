@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {OnOff} from "./components/OnOff/OnOff";
 
 //function declaration
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState(false)
+    let [on, setOn] = useState(false)
 
     return (
         <div className={'App'}>
@@ -27,10 +29,11 @@ function App() {
             {/*<Rating value={3}/>*/}
             {/*<Rating value={4}/>*/}
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <OnOff/>
+            <UncontrolledOnOff/>
 
             <UncontrolledAccordion titleValue={'Uncontrolled Accordion'}/>
             <UncontrolledRating/>
+            <OnOff on={on} onChange={setOn}/>
         </div>
     );
 }
