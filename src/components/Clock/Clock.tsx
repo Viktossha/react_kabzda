@@ -15,7 +15,7 @@ export const Clock = (props: PropsType) => {
 
     useEffect(() => {
         const intervalID = setInterval(() => {
-            console.log('tick')
+            //console.log('tick')
             setDate(new Date())
         }, 1000)
 
